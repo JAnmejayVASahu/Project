@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black; 
+  }
+
+  @keyframes blink {
+    0%, 50%, 100% {
+      border-color: transparent;
+    }
+    25%, 75% {
+      border-color: rgb(237, 233, 233);
+    }
+  }
+
+  .calculator {
+    width: 300px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #333;
+    transition: box-shadow 0.3s;
+  }
+
+  .calculator:hover {
+    box-shadow: 0 0 10px white; /* Apply white box-shadow on hover */
+  }
+
+  #display {
+    width: calc(100% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  #cursor {
+    height: 100%;
+    width: 2px;
+    background-color: rgb(217, 20, 20);
+    animation: blink 1s infinite;
+    position: absolute;
+    display: block;
+  }
+
+  .keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #666;
+    color: white;
+    transition: box-shadow 0.3s;
+  }
+
+  button:hover {
+    box-shadow: 0 0 10px white;
+  }
+
+  .clear {
+    grid-column: span 4;
+    background-color: rgb(197, 116, 196);
+    color: #000000;
+  }
